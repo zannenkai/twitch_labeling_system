@@ -1,0 +1,43 @@
+/* .flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.label-container > div{
+    width:calc(100% / 3);
+}
+.right-column__toggle-visibility {
+    top: 10rem !important;;
+} */
+span[data-a-target="chat-line-message-body"]::before{
+    content:attr(label);
+    margin-right:1em;
+    font-weight:1000;
+    color:red;
+}
+span[data-a-target="chat-line-message-body"]:not([label])::before{
+    margin-right:0;
+}
+/* ホバー時に表示される要素のスタイル */
+.predictions {
+    width: 10em;
+    color: black;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+    bottom: 2em;
+}
+
+/* ホバー時に表示される要素がある要素に対するスタイル */
+.hoverable {
+    position: relative;
+    display: inline-block;
+}
+
+/* ホバー時に表示される要素がある要素にホバーしたときのスタイル */
+.hoverable:hover .predictions {
+    display: block;
+}
