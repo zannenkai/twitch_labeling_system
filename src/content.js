@@ -35,7 +35,6 @@ const applyLabel = (chatId, label, predictions) => {
     commentEle.setAttribute('label', label)
     commentEle.classList.add("hoverable")
 
-
     // ツールチップ要素の作成
     const predictionsDiv = document.createElement('div');
     predictionsDiv.className = 'predictions';
@@ -50,8 +49,6 @@ const applyLabel = (chatId, label, predictions) => {
         // predictionsDiv に新しい div を追加
         predictionsDiv.appendChild(predictionDiv);
     }
-
-    // コメント要素の後ろにツールチップ要素を追加
 
 }
 const getChatData = (ele) => {

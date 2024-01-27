@@ -24,7 +24,6 @@ minute = str(now.minute).zfill(2)
 # 月と日を結合して指定の形式で表示
 date_str = month + day + "_" + hour + minute
 
-
 # プロジェクトのディレクトリが存在しない場合、作成する
 if not os.path.exists(date_str):
     os.makedirs(date_str)
@@ -53,15 +52,13 @@ dataset_for_loader = []
 # data.jsonファイルのパス
 data_file = input("データファイルのパスを入力してください: ")
 
-weight_decay = 0
+weight_decay = 0.01
 max_epochs = 10
 train_batch_size = 16
 val_batch_size = 32
 test_batch_size = 32
 dropout_ratio = 0.5
 learning_rate = 1e-5
-
-
 
 # data.jsonファイルの読み込み
 with open(data_file, "r", encoding="utf-8") as f:
@@ -74,8 +71,6 @@ with open(r"../labels.json", 'r', encoding='utf-8') as f:
 
 # 各labelごとのコメントの数を数える
 label_counts = Counter(item['label'] for item in data)
-
-
 
 # data.jsonの各データを整形
 for item in data:
